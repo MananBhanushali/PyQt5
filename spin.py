@@ -20,29 +20,29 @@ class MainWindow(qtw.QWidget):
         my_label = qtw.QLabel("Pick Something from the List Below")
         my_label.setFont(qtg.QFont("Helvetica", 24))
 
-        # Create A Combo Box
-        my_combo = qtw.QComboBox(self,
-                                 editable=True,
-                                 insertPolicy=qtw.QComboBox.InsertAtTop)
+        # Create A Spin Box
+        my_spin = qtw.QSpinBox(self,
+                               value=10,
+                               maximum=100,
+                               minimum=0,
+                               singleStep=5,
+                               prefix="#",
+                               suffix="!!!")
 
-        # Add Items to Combo Box
-        my_combo.addItem("Pepperoni", "Something")
-        my_combo.addItem("Cheese", 2)
-        my_combo.addItem("Mushroom", qtw.QWidget)
-        my_combo.addItem("Peppers")
+        my_label.setFont(qtg.QFont("Helvetica", 18))
 
         # Create A Button
         my_button = qtw.QPushButton("Press Me", clicked=lambda: press_it())
 
         # Add Widgets to Layout
         self.layout().addWidget(my_label)
-        self.layout().addWidget(my_combo)
+        self.layout().addWidget(my_spin)
         self.layout().addWidget(my_button)
 
         self.show()
 
         def press_it():
-            my_label.setText(f"You Picked {my_combo.currentText()}!")
+            my_label.setText(f"You Picked {my_spin.value()}!")
 
 
 app = qtw.QApplication([])

@@ -7,11 +7,7 @@ class MainWindow(qtw.QWidget):
         super().__init__()
 
         # Change The Title
-        self.setWindowTitle("Hello PyQt5")
-
-        # To Change Window Icon
-
-        # self.setWindowIcon(QtGui.QIcon("../CodeX/CodeX Base/codex.png"))
+        self.setWindowTitle("Spin Boxes with PyQt5")
 
         # Set A Vertical Layout
         self.setLayout(qtw.QVBoxLayout())
